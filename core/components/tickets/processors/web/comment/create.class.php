@@ -144,6 +144,10 @@ class TicketCommentCreateProcessor extends modObjectCreateProcessor
             $this->modx->log(modX::LOG_LEVEL_ERROR, '[Tickets] Could not load Tickets service in TicketCommentCreateProcessor.');
             return $this->modx->lexicon('tickets_err_unknown');
         }
+        if (!$this->modx->getObject('modSnippet', array('name' => 'Jevix'))) {
+            $this->modx->log(modX::LOG_LEVEL_ERROR, '[Tickets] Could not load Jevix snippet in TicketCommentCreateProcessor.');
+            return $this->modx->lexicon('err_no_jevix');
+        }
 
         $text = (string)$this->getProperty('text');
         $cleanText = trim($Tickets->Jevix($text, 'Comment'));

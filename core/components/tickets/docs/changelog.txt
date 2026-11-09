@@ -6,7 +6,7 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 ## [Unreleased]
 
 ### Security
-- Обязательная санитизация текста комментариев через Jevix в публичных процессорах `web/comment/create` и `web/comment/update` во избежание Stored XSS при прямом вызове процессоров
+- Обязательная санитизация текста комментариев через Jevix в публичных процессорах `web/comment/create` и `web/comment/update`: сохранение прерывается при недоступном Jevix, исходный текст хранится в `raw`, а клиентская подмена `raw` игнорируется
 
 ## [1.14.1] - 2026-10-10
 

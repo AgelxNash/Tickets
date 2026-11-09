@@ -551,9 +551,7 @@ class Tickets
                 }
             }
         }
-        unset($data['action']);
-        $data['raw'] = trim($data['text']);
-        $data['text'] = $this->Jevix($data['text'], 'Comment');
+        unset($data['action'], $data['raw']);
         $data['allowGuest'] = !empty($this->config['allowGuest']);
         $data['allowGuestEdit'] = !empty($this->config['allowGuestEdit']);
         $data['requiredFields'] = $this->config['requiredFields'];
